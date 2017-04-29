@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <map>
 #include "solveEuler.h"
 #include <ctime>
 

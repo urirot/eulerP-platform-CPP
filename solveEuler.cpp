@@ -17,9 +17,14 @@ int SolveEuler::solver(const std::string& which)
 	}
 }
 
+            /*------------------euler problems-------------------------*/
+
+
+
+
 /*It can be seen that the number, 125874, and its double, 251748, contain exactly the same digits, but in a different order.
 Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain the same digits.
-answer - 142857, computation time:slow*/
+answer - 142857, computation time:3.896*/
 int SolveEuler::prob52()
 {
 	int ans = 0;
@@ -29,17 +34,20 @@ int SolveEuler::prob52()
 
 	while (!found)
 	{
-		nums.at(0) = to_string(i);
-		nums.at(1) = to_string(i*2);
-		nums.at(2) = to_string(i*3);
-		nums.at(3) = to_string(i*4);
-		nums.at(4) = to_string(i*5);
-		nums.at(5) = to_string(i*6);
-
-		if (Methods::containsPermDigits(nums))
+		if (to_string(i)[0] == '1' && to_string(i)[to_string(i).length()] != '0')
 		{
-			found = true;
-			ans = i;
+			nums.at(0) = to_string(i);
+			nums.at(1) = to_string(i * 2);
+			nums.at(2) = to_string(i * 3);
+			nums.at(3) = to_string(i * 4);
+			nums.at(4) = to_string(i * 5);
+			nums.at(5) = to_string(i * 6);
+
+			if (Methods::containsPermDigits(nums))
+			{
+				found = true;
+				ans = i;
+			}
 		}
 		i++;
 	}
