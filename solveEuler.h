@@ -3,6 +3,8 @@
 #include <map>
 #include <vector>
 #include "Methods.h"
+#include <fstream>
+#include <set>
 
 using namespace std;
 typedef int(*FUNCPTR)(); // our typedef
@@ -19,4 +21,5 @@ private:
 	map<string, FUNCPTR> func_map;
 	static int prob52();
 	static int prob53();
+	static int prob54();
 };
